@@ -63,52 +63,24 @@ cd Cam4DOcc
 export PYTHONPATH=“.”
 python setup.py develop
 ```
+### Data Structure
 
-
-
-
-
-
-
-
-### Code Structure
+Please link your [nuScenes dataset](https://www.nuscenes.org/nuscenes#download) to the data folder. [nuscenes_occ_infos_train.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/train_pkl) and [nuscenes_occ_infos_val.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/val_pkl) are also provided by the previous work.
 
 ```bash
-├── config
-│   ├── config_haomo.yml
-│   └── config.yml
-├── modules
-│   ├── loss.py
-│   ├── netvlad.py
-│   ├── overlap_transformer_haomo.py
-│   └── overlap_transformer.py
-├── test
-│   ├── test_haomo_topn_prepare.py
-│   ├── test_haomo_topn.py
-│   ├── test_kitti00_prepare.py
-│   ├── test_kitti00_PR.py
-│   ├── test_kitti00_topN.py
-│   ├── test_results_haomo
-│   │   └── predicted_des_L2_dis_bet_traj_forward.npz (to be generated)
-│   └── test_results_kitti
-│       └── predicted_des_L2_dis.npz (to be generated)
-├── tools
-│   ├── read_all_sets.py
-│   ├── read_samples_haomo.py
-│   ├── read_samples.py
-│   └── utils
-│       ├── gen_depth_data.py
-│       ├── split_train_val.py
-│       └── utils.py
-├── train
-│   ├── training_overlap_transformer_haomo.py
-│   └── training_overlap_transformer_kitti.py
-├── valid
-│   └── valid_seq.py
-├── visualize
-│   ├── des_list.npy
-│   └── viz_haomo.py
-└── weights
-    ├── pretrained_overlap_transformer_haomo.pth.tar
-    └── pretrained_overlap_transformer.pth.tar
+Cam4DOcc
+├── data/
+│   ├── nuscenes/
+│   │   ├── maps/
+│   │   ├── samples/
+│   │   ├── sweeps/
+│   │   ├── lidarseg/
+│   │   ├── v1.0-test/
+│   │   ├── v1.0-trainval/
+│   │   ├── nuscenes_occ_infos_train.pkl/
+│   │   ├── nuscenes_occ_infos_val.pkl/
 ```
+
+
+
+
