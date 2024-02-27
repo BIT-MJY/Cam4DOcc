@@ -81,6 +81,7 @@ Cam4DOcc
 │   │   ├── nuscenes_occ_infos_val.pkl/
 │   ├── nuScenes-Occupancy/
 ```
+## Training and Evalaution
 
 ### Train OCFNetV1.1 with 8 GPUs
 
@@ -102,6 +103,10 @@ bash run.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.2.py 8
 bash run_eval.sh $PATH_TO_CFG $PATH_TO_CKPT $GPU_NUM
 # e.g. bash run_eval.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.1.py ./work_dirs/OCFNet_in_Cam4DOcc_V1.1/epoch_20.pth  8
 ```
+
+## TODO
+The tutorial is being refined ...
+
 We will release our pretrained models as soon as possible. OCFNetV1.3 and OCFNetV2 are on their way ...
 
 
