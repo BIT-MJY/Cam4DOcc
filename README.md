@@ -65,7 +65,7 @@ python setup.py develop
 ```
 ### Data Structure
 
-Please link your [nuScenes dataset](https://www.nuscenes.org/nuscenes#download) to the data folder. [nuscenes_occ_infos_train.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/train_pkl) and [nuscenes_occ_infos_val.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/val_pkl) are also provided by the previous work.
+Please link your [nuScenes V1.0 full dataset ](https://www.nuscenes.org/nuscenes#download) to the data folder. [nuScenes-Occupancy](https://drive.google.com/file/d/1vTbgddMzUN6nLyWSsCZMb9KwihS7nPoH/view?usp=sharing), [nuscenes_occ_infos_train.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/train_pkl), and [nuscenes_occ_infos_val.pkl](https://github.com/JeffWang987/OpenOccupancy/releases/tag/val_pkl) are also provided by the previous work. If you only want to reproduce the forecasting results with "inflated" form, nuScenes dataset is all you need.
 
 ```bash
 Cam4DOcc
@@ -79,7 +79,28 @@ Cam4DOcc
 │   │   ├── v1.0-trainval/
 │   │   ├── nuscenes_occ_infos_train.pkl/
 │   │   ├── nuscenes_occ_infos_val.pkl/
+│   ├── nuScenes-Occupancy/
 ```
+
+### Train OCFNetV1.1 with 8 GPUs
+
+OCFNetV1.1 can forecast inflated GMO and others. In this case, _vehicle_ and _human_ are considered as one unified category.
+```
+bash run.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.1.py 8
+```
+### Train OCFNetV1.2 with 8 GPUs
+
+OCFNetV1.2 can forecast inflated GMO including _bicycle_, _bus_, _car_, _construction_, _motorcycle_, _trailer_, _truck_, _pedestrian_, and others. In this case, _vehicle_ and _human_ are divided into multiple categories for clearer evaluation on forecasting performance.
+
+```
+bash run.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.2.py 8
+```
+
+
+
+### Acknowledgement
+
+We thank the fantastic works [OpenOccupancy](https://github.com/JeffWang987/OpenOccupancy), [PowerBEV](https://github.com/EdwardLeeLPZ/PowerBEV), and [FIERY](https://anthonyhu.github.io/fiery) for their pioneer code release, which provide codebase for this benchmark.
 
 
 
