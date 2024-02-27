@@ -85,17 +85,24 @@ Cam4DOcc
 ### Train OCFNetV1.1 with 8 GPUs
 
 OCFNetV1.1 can forecast inflated GMO and others. In this case, _vehicle_ and _human_ are considered as one unified category.
-```
+```bash
 bash run.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.1.py 8
 ```
 ### Train OCFNetV1.2 with 8 GPUs
 
 OCFNetV1.2 can forecast inflated GMO including _bicycle_, _bus_, _car_, _construction_, _motorcycle_, _trailer_, _truck_, _pedestrian_, and others. In this case, _vehicle_ and _human_ are divided into multiple categories for clearer evaluation on forecasting performance.
 
-```
+```bash
 bash run.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.2.py 8
 ```
 
+### Test OCFNet for different tasks
+
+```bash
+bash run_eval.sh $PATH_TO_CFG $PATH_TO_CKPT $GPU_NUM
+# e.g. bash run_eval.sh ./projects/configs/baselines/OCFNet_in_Cam4DOcc_V1.1.py ./work_dirs/OCFNet_in_Cam4DOcc_V1.1/epoch_20.pth  8
+```
+We will release our pretrained models as soon as possible. OCFNetV1.3 and OCFNetV2 are on their way ...
 
 
 ### Acknowledgement
